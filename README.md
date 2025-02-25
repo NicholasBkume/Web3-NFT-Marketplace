@@ -2,7 +2,8 @@
 
 ```markdown
 ## Overview
-**OpenD** is a decentralized NFT marketplace built on the Internet Computer blockchain. Users can mint, buy, and sell NFTs in a trustless environment, leveraging the power of blockchain technology.
+**OpenD** is a decentralized NFT marketplace built on the Internet Computer blockchain. 
+Users can mint, buy, and sell NFTs in a trustless environment, leveraging the power of blockchain technology.
 
 ## Features
 - Mint NFTs directly from the platform.
