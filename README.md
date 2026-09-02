@@ -1,104 +1,141 @@
-# OpenD - Decentralized NFT Marketplace
+# OpenD — Decentralized NFT Marketplace
 
-```markdown
-## Overview
-**OpenD** is a decentralized NFT marketplace built on the Internet Computer blockchain. 
-Users can mint, buy, and sell NFTs in a trustless environment, leveraging the power of blockchain technology.
+**OpenD** is a decentralized NFT marketplace built on the **Internet Computer Protocol (ICP)**. The project demonstrates a full-stack Web3 architecture where a React/TypeScript frontend communicates with Internet Computer canisters to support NFT creation, ownership, buying, and selling.
 
-## Features
-- Mint NFTs directly from the platform.
-- Buy and sell NFTs in a decentralized manner.
-- Fully hosted on the Internet Computer blockchain.
-- Secure and transparent transactions.
-- Responsive and user-friendly interface.
-- Smart contract-powered NFT ownership and transfers.
+## Highlights
 
-## Tech Stack
-- **Frontend:** React, TypeScript, Webpack
-- **Backend:** Internet Computer Canisters (Motoko)
-- **Blockchain:** Internet Computer Protocol (ICP)
-- **Package Manager:** npm
-- **Deployment:** Internet Computer (dfx), Fleek (optional)
+- Mint NFTs from the application
+- Buy and sell NFTs through decentralized application logic
+- Smart-contract-backed ownership and transfers
+- Backend canisters hosted on the Internet Computer
+- Responsive web interface
+- Web3-focused full-stack architecture
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React, TypeScript, Webpack |
+| Backend | Internet Computer Canisters, Motoko |
+| Blockchain | Internet Computer Protocol (ICP) |
+| Package manager | npm |
+| Local development | DFX SDK |
+| Deployment | Internet Computer |
+
+## Architecture
+
+```text
+Browser
+   │
+   ▼
+React + TypeScript frontend
+   │
+   ▼
+Internet Computer canister interface
+   │
+   ▼
+Motoko backend canisters
+   │
+   ▼
+ICP network
+```
 
 ## Prerequisites
-Ensure you have the following installed:
-- [DFX SDK](https://internetcomputer.org/docs/current/developer-docs/setup/install/) (Internet Computer SDK)
-- Node.js & npm
-- A Web3 wallet compatible with Internet Computer
 
-## Installation
-```sh
-# Clone the repository
-git clone https://github.com/yourusername/opend.git
-cd opend
+Install:
 
-# Install dependencies
+- [DFX SDK](https://internetcomputer.org/docs/current/developer-docs/setup/install/)
+- Node.js and npm
+- An Internet Computer-compatible identity/wallet when interacting with deployed Web3 functionality
+
+## Run locally
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/NicholasBkume/Web3-NFT-Marketplace.git
+cd Web3-NFT-Marketplace
 npm install
+```
 
-# Start the local Internet Computer replica
+Start the local Internet Computer replica:
+
+```bash
 dfx start --background
+```
 
-# Deploy the backend canister
+Deploy the canisters:
+
+```bash
 dfx deploy
+```
 
-# Run the frontend
+Start the frontend using the project's configured npm script:
+
+```bash
 npm start
 ```
 
-## Access the Application
-Once the application is running, open your browser and visit:
-```sh
+The local application is typically available at:
+
+```text
 http://localhost:8080
 ```
 
-## Project Structure
-```
-/opend
-│── src/                   # Source code for frontend
-│── dist/                  # Build files
-│── package.json           # Dependencies and scripts
-│── dfx.json               # Internet Computer config
-│── webpack.config.js      # Webpack settings
-│── tsconfig.json          # TypeScript configuration
-│── README.md              # Documentation
-```
+If your local configuration exposes a different port, use the URL reported by the development server.
 
-## Deploying the Web3 App
-To deploy OpenD on the Internet Computer blockchain, follow these steps:
+## Deploy to the Internet Computer
 
-### Step 1: Authenticate with Internet Computer
-```sh
-dfx identity new <your-identity-name>
-dfx identity use <your-identity-name>
+Create or select a DFX identity:
+
+```bash
+dfx identity new <identity-name>
+dfx identity use <identity-name>
 ```
 
-### Step 2: Deploy to the Internet Computer
-```sh
+Deploy to the Internet Computer main network:
+
+```bash
 dfx deploy --network ic
 ```
 
-### Step 3: Verify Deployment
-After deployment, you will receive a URL where your application is hosted on the Internet Computer. Open the URL in your browser to access your live app.
+After deployment, DFX provides the canister identifiers and URLs needed to access the application.
 
-### Optional: Deploy on Fleek
-You can also deploy OpenD using [Fleek](https://fleek.co/) for IPFS and Internet Computer hosting.
-1. Connect your GitHub repository to Fleek.
-2. Choose **Internet Computer** as the deployment option.
-3. Set up environment variables if needed.
-4. Deploy the project and get your live URL.
+## Project structure
+
+```text
+Web3-NFT-Marketplace/
+├── src/                 # Frontend and application source
+├── dist/                # Generated build output, when present
+├── dfx.json             # Internet Computer configuration
+├── package.json         # JavaScript/TypeScript dependencies and scripts
+├── webpack.config.js    # Frontend build configuration
+├── tsconfig.json        # TypeScript configuration
+└── README.md
+```
+
+## Development notes
+
+This repository is intended as a Web3/full-stack project and learning portfolio. Before production use, review authentication, authorization, transaction handling, input validation, canister security, and deployment configuration for the current ICP environment.
 
 ## Contributing
-```sh
-# Fork the repository and create a new branch
-git checkout -b feature-branch
 
-# Make your changes and commit
-git commit -m "Added new feature"
+1. Fork the repository.
+2. Create a feature branch:
 
-# Push to your fork and create a pull request
+```bash
+git checkout -b feature/your-feature
 ```
+
+3. Make and test your changes.
+4. Commit with a descriptive message:
+
+```bash
+git commit -m "feat: describe the change"
+```
+
+5. Push your branch and open a pull request.
 
 ## License
-This project is licensed under the MIT License.
-```
 
+This project is licensed under the MIT License.
